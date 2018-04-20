@@ -2,8 +2,18 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        sh 'mvn clean compile'
+      parallel {
+        stage('Build') {
+          steps {
+            sh 'mvn clean compile'
+            waitForQualityGate()
+          }
+        }
+        stage('Sonar') {
+          steps {
+            waitForQualityGate()
+          }
+        }
       }
     }
   }
