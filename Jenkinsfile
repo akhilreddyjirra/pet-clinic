@@ -6,7 +6,6 @@ pipeline {
         stage('Build') {
           steps {
             sh 'mvn clean compile'
-            waitForQualityGate()
           }
         }
         stage('Sonar') {
