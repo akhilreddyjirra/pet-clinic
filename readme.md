@@ -23,3 +23,8 @@ Requisites:
         -DgeneratePom=true \
         -DrepositoryId=maven-snapshots \
         -Durl=http://{nexusurl}/nexus/repository/maven-snapshots/ 
+```
+Note: nexus url --> http://X.X.X.X/nexus
+     user  --> nexus-user 
+     pass --> password of user
+```
